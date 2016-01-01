@@ -22,7 +22,7 @@ gulp.task('serve', function(done) {
 // this task utilizes the browsersync plugin
 // to create a dev server instance
 // at http://localhost:9000
-gulp.task('build-and-serve', function(done) {
+gulp.task('build-and-serve', ['build'], function(done) {
   browserSync({
     online: false,
     open: false,

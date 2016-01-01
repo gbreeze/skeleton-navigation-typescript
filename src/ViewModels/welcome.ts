@@ -7,8 +7,8 @@ export class Welcome {
   previousValue = this.fullName;
 
 constructor() {
-    let service = new TemplateApp.TestService();
-    let data = service.myLists;    
+  //  let service = new TemplateApp.TestService();
+  //  let data = service.myLists;    
 }
 
   //Getters can't be directly observed, so they must be dirty checked.

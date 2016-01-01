@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
+var flatten = require('gulp-flatten');
 var sourcemaps = require('gulp-sourcemaps');
 var paths = require('../paths');
 var assign = Object.assign || require('object.assign');
@@ -22,6 +23,7 @@ gulp.task('build-system', function() {
     .pipe(changed(paths.output, {extension: '.js'}))
     .pipe(typescript(tsProject))  
     .pipe(sourcemaps.write({includeContent: true}))
+    .pipe(flatten())
     .pipe(gulp.dest(paths.output));
 });
 
@@ -29,6 +31,7 @@ gulp.task('build-system', function() {
 gulp.task('build-html', function() {
   return gulp.src(paths.html)
     .pipe(changed(paths.output, {extension: '.html'}))
+    .pipe(flatten())
     .pipe(gulp.dest(paths.output));
 });
 
