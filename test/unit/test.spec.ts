@@ -39,7 +39,7 @@ describe('the Users module', () => {
     });
 
     it("test 2", function () {
-        let d = "Hellfo";
+        let d = "Hello";
 
         expect("Hello").toBe(d);
     });
