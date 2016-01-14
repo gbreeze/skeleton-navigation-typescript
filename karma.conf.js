@@ -11,7 +11,9 @@ module.exports = function(config) {
           "typescript": "node_modules/typescript/lib/typescript.js",
           "systemjs": "node_modules/systemjs/dist/system.js",
           'system-polyfills': 'node_modules/systemjs/dist/system-polyfills.js',
-          'es6-module-loader': 'node_modules/es6-module-loader/dist/es6-module-loader.js'
+          'es6-module-loader': 'node_modules/es6-module-loader/dist/es6-module-loader.js',
+          'promise-polyfill': "node_modules/promise-polyfill/Promise.min.js", // provides Promise for PhantomJS
+          'phantomjs-polyfill':"node_modules/phantomjs-polyfill/bind-polyfill.js"
         },
         packages: {
           'test/unit': {
@@ -39,7 +41,7 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: false,
     //browsers: ['Chrome'],
-    browsers: ['PhantomJS2'],
-    singleRun: false
+    browsers: ['PhantomJS'],
+    singleRun: true
   });
 };
