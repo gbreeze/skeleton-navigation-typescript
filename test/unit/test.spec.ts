@@ -35,11 +35,11 @@ describe('the Users module', () => {
     });
 
     it("test", function() {        
-        expect(true).toBe(false);
+        expect(true).toBe(true);
     });
 
     it("test 2", function () {
-        let d = "Hello";
+        let d = "Hellfo";
 
         expect("Hello").toBe(d);
     });
