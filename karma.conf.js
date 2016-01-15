@@ -34,14 +34,25 @@ module.exports = function(config) {
       'test/unit/*.spec.ts'
     ],
     exclude: [],
-    preprocessors: { },
-    reporters: ['progress'],
+    preprocessors: {
+        "dist/**/*.js": ["coverage"]
+    },
+    reporters: ['progress', 'coverage'],
+    coverageReporter: {
+        dir: "test/coverage/",
+        reporters: [
+            { type: 'html', subdir: 'report-html' },
+            { type: 'lcov', subdir: 'report-lcov' },
+            { type: 'text-summary', subdir: '.', file: 'coverage-summary.txt' },
+            { type: 'text' }
+        ]
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     //browsers: ['Chrome'],
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS2'],
     singleRun: false
   });
 };

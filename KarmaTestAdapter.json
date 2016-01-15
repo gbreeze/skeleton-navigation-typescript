@@ -1,0 +1,15 @@
+﻿{
+    "$schema": "http://MortenHoustonLudvigsen.github.io/KarmaTestAdapter/KarmaTestAdapter.schema.json",
+    "Name": "My tests",
+    "Extensions": "./Extensions",
+    "Traits": [ "Karma", { "Name": "Foo", "Value": "Bar" } ],
+    "Disabled": true,
+    "LogToFile": true,
+    "LogDirectory": "TestResults/Karma",
+    "config": {
+      "browsers": [
+        "PhantomJS2"
+      ],      
+      "autoWatch": false
+    }
+}
